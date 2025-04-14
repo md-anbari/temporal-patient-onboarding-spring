@@ -1,0 +1,45 @@
+server:
+  port: 0
+
+onboarding:
+  task:
+    queue: TestOnboardingTaskQueue
+  id:
+    prefix: test-onboarding-
+
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          onboarding-service:
+            connect-timeout: 1000
+            read-timeout: 1000
+            url: http://localhost:${wiremock.server.port}
+  datasource:
+    url: jdbc:postgresql://localhost:5432/onboarding_test
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+
+wiremock:
+  server:
+    port: ${random.int[10000,20000]}
+    files-root: classpath:wiremock
+
+temporal:
+  host: localhost
+  port: 7233
+  namespace: test 

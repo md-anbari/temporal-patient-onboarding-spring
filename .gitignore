@@ -1,0 +1,65 @@
+#Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# OSX
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
+
+# Local environment
+.env
+.sdkmanrc
+
+# Spring Boot
+*.pid
+*.springBeans
+*.properties.local
+*.yml.local
+
+# Temporal
+temporal/
+
+# Project specific
+test.json
+test-patient.json
+docker-compose/

@@ -1,0 +1,43 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: onboarding-app
+  threads:
+    virtual:
+      enabled: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          onboarding-service:
+            connect-timeout: 5000
+            read-timeout: 5000
+            url: http://localhost:8081
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
+
+onboarding:
+  task:
+    queue: ONBOARDING_TASK_QUEUE
+  id:
+    prefix: onboarding-
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+temporal:
+  host: 127.0.0.1
+  port: 7233
+  namespace: default 
